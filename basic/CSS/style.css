@@ -1,0 +1,152 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: #ffffff;
+}
+.container{
+	width: 100%;
+	font-family:  'Microsoft YaHei';
+}
+.navbar-toggle{
+	position: relative;
+	float: right;
+	padding: 9px 10px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	margin-top:8px;
+	margin-right: 15px;
+	margin-bottom: 8px;
+	background-color: #000;
+}
+.icon-bar{
+	display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+.sr-only{
+	position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+header{
+	width: 100%;
+	height: 60px;
+	background-color: rgb(82,42,92);
+	color: #ffffff;
+}
+header .banner-left{
+	height: 60px;
+	width: 10%;
+	text-align: center;
+	position: relative;
+	left: 7%;
+	display: inline-block;
+}
+header .banner-left h1{
+	font-size: 2em;
+	margin: 0;
+	cursor: default;
+	color: #ffffff;
+}
+header nav{
+	height: 60px;
+	left: 40%;
+	position: relative;
+	display: inline-block;
+}
+header nav ul{
+	width: 100%;
+	line-height: 60px;
+	list-style: none;
+	box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+}
+header nav ul li{
+	font-size: 1.2em;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	box-sizing:border-box;
+	line-height: 60px;
+}
+header nav ul li a{
+	color: #ffffff;
+}
+header .banner-right{
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	width: 7%;
+}
+.section-1{
+	background-image: url(../images/pic01.jpg);
+	width: 100%;min-height: 700px;
+}
+.banner-text{
+	background:rgba(0,0,0,0.71);
+	position: absolute;
+	width: 20%;
+	left: 50%;
+	top: 50%;
+}
+.banner-title{
+	float: right;
+}
+.banner-mes{
+	position: absolute;
+	top: 60%;
+}
+.section-2{
+	background-color:rgb(238,238,238); 
+	width: 100%;
+	padding-left: 7%;
+	overflow: hidden;
+	padding-top: 2%;
+	padding-bottom: 7%;
+}
+section figure{
+	display: inline-block;
+/*图片文字填充div大小，要设置高度*/
+	margin:0 0 10px 0;
+	height: 363px;
+	width: 27%;
+	height: 100%;
+	background-color: #fff;
+	margin-left: 1%;
+	text-align: center;
+}
+section figcaption{
+	margin:0;
+}
+.section-3{
+	width: 100%;
+	text-align: center;
+}
+.section-3 .banner-info{
+	width: 50%;
+}
+section .circular{
+	display:inline-block;
+    position:relative;
+    width:200px;
+    height:200px;
+    overflow:hidden;
+    border-radius:50%;
+    top: -60px;
+    margin: 0 auto;
+    /*margin-left:45%;*/
+}
+section .circular img{
+	width:auto;
+    height:100%;
+}
