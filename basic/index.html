@@ -4,73 +4,140 @@
 	<meta charset=utf-8>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
-	<link href="CSS/style.css" rel="stylesheet" type="text/css" >
-	<link href="css/font-awesome.css" rel="stylesheet" type="text/css"> 
+	<link href="css/style.css" rel="stylesheet" type="text/css" >
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>
 	<div class="container">
 		<header>
-			<div class="menu">
-				<button type="button" class="navbar-toggle">
-					<span class="sr-only">Toggle navigation</span>
-					<span class='icon-bar'></span>
-					<span class='icon-bar'></span>
-					<span class='icon-bar'></span>
-				</button>
-			</div>
-			<div class="banner-left">
+			
+			<div class="banner-left text-center">
 				<h1><a href="index.html">YourLogo</a></h1>
 			</div>
-			<nav>
+			<div class="right m-top1-5 m-right3 m-left-1 hidden">
+				<img src="images/github_white.png">
+			</div>
+			<button type="button" class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+					</button>
+			<nav class="right  m-right3">	
 				<ul>
-					<li class='collapse in'><a href="#">首页</a></li>
-					<li class='collapse in'><a href="#">首页</a></li>
-					<li class='collapse in'><a href="#">首页</a></li>
-					<li class='collapse in'><a href="#">首页</a></li>
+					<li class='collapse '><a href="index.html">首页</a></li>
+					<li class='collapse '><a href="#">文章</a></li>
+					<li class='collapse '><a href="#">作品</a></li>
+					<li class='collapse '><a href="profile.html">关于</a></li>
 				</ul>
 			</nav>
-			<div class="banner-right">
-				<span>fontawesome</span>
-			</div>
 		</header>
 		<section class="section-1">
 			<div class="banner-text">
-				<p class="banner-title">标题1</p>
-				<span class="banner-mes">正文正文正文正文正文正文正文正文正文正文
-				正文正文正文正文正文正文正文正文正文正文</span>
+				<p class="text-right">标题1</p>
+				<span class="banner-mes text-indent">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</span>
 			</div>
 		</section>
-		<section class="section-2">
-			<figure>
-				<img src="images/pic02.jpeg">
-				<figcaption>正文正文正文正文正文正文正文正文正文正文
-				正文正文正文正文正文正文正文正文正文正文</figcaption>
-			</figure>
-			<figure>
-				<img src="images/pic02.jpeg">
-				<figcaption>正文正文正文正文正文正文正文正文正文正文
-				正文正文正文正文正文正文正文正文正文正文</figcaption>
-			</figure>
-			<figure>
-				<img src="images/pic02.jpeg">
-				<figcaption>正文正文正文正文正文正文正文正文正文正文
-				正文正文正文正文正文正文正文正文正文正文</figcaption>
-			</figure>
+		<section class="section-2 p-top2 p-bottom9 text-center">
+			<div class="m-left4">
+				<figure class="col-4 m-lef-5 p-0-5" >
+					<img src="images/pic02.jpeg" class="img-responsive">
+					<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
+				</figure>
+				<figure class="col-4 p-0-5">
+					<img src="images/pic02.jpeg" class="img-responsive ">
+					<figcaption class="text-indent">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
+				</figure>
+				<figure class="col-4 p-0-5">
+					<img src="images/pic02.jpeg" class="img-responsive">
+					<figcaption class="text-indent">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
+				</figure>
+			</div>
 		</section>	
-		<section class="section-3">
-			<div class="banner-info">
-				<div class="circular">
-					<img src="images/pic02.jpeg">
-				</div>
+		<section class="section-3 text-center">
+			<div class="banner-info p-bottom10">
+				<img src="images/pic02.jpeg" class="img-circular img-circular-l img-circular-s img-circular-top">
 				<article>
-					<p>Hi,I'm XXX</p>
-					<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+					<h3>Hi,I'm XXX</h3>
+					<!-- 英文字符X出现无法换行现象 -->
+					<p class="text-indent text-left">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p>
 				</article>
 			</div>
 		</section>
-		<footer></footer>
+		<footer class="text-center">
+			<div class="footer-text">
+				<ul>
+					<li class="p-lr-1"><a href="">首页</a></li>
+					<li class="p-lr-1"><a href="">首页</a></li>
+					<li class="p-lr-1"><a href="">首页</a></li>
+					<li class="p-lr-1"><a href="">首页</a></li>
+				</ul>
+				<hr>
+				<div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<!-- 清楚浮动，填充footer大小 -->
+					<div class="clear"></div>
+				</div>
+			</div>
+		</footer>
 	</div>
+
+
+
+	<script type="text/javascript">
+		$(function(){
+			$('.navbar-toggle').on('click',function() {
+				$('nav').removeClass('right').removeClass('m-right3');
+				$(".collapse").toggleClass("in");
+			});
+		})
+	</script>
 </body>
 
 </html>

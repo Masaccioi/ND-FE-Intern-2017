@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>profile</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" >
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+
+	<style type="text/css">
+		.timeline{
+			width: 95%;
+			max-width: 980px;
+			background-color: #fff;
+			height: 1700px;
+			margin: 0 auto;
+			margin-top:100px; 
+			margin-bottom: 80px;
+		}
+		.timeline::before{
+			content: '';
+			position: absolute;
+			top: 160px;
+			height: 1700px;
+			width: 7px;
+			background: #eee;
+			left: 50%;
+		}
+		.timeline-block {
+			position: relative;
+		}
+		.timeline-block  img{
+			left: 50%;
+		}
+		.timeline-block-img{
+			margin-bottom: 2em;
+		}
+		.timeline-block .tl-title{
+		    width: 40%;
+		    font-size: 1.5em;
+		}
+		.timeline-block .tl-mes{
+			width: 40%;
+			max-width: 310px;
+			position: relative;
+		    left: 50%;
+		    top: -62px;
+		    padding: 2em;
+		}
+		.tl-time-block,.tl-text-block{
+			position: absolute; 
+			left: 50%;
+			top: 82%;
+		}
+		.tl-time-block .tl-time{
+			display: inline-block;
+			border-radius: 2px;
+			background-color: #eee;
+			padding: 6px 0px;
+			margin-left: -1.7em;
+			margin-bottom: 3em;
+		}
+		.timeline-block span{
+			background-color: #fff;
+			border-radius: 0.4em;
+    		padding: 0.3em 0.7em;
+		}
+		.tl-text-block{
+			    margin-left: 3em;
+		}
+		.tl-text{
+			margin-bottom: 3em;
+		}
+
+		@media (max-width: 767px) { 
+			.timeline{
+
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container container-bg">
+		<header>
+			
+			<div class="banner-left text-center">
+				<h1><a href="index.html">YourLogo</a></h1>
+			</div>
+			<div class="right m-top1-5 m-right3 m-left-1 hidden">
+				<img src="images/github_white.png">
+			</div>
+			<button type="button" class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+					</button>
+			<nav class="right  m-right3">	
+				<ul>
+					<li class='collapse '><a href="index.html">首页</a></li>
+					<li class='collapse '><a href="#">文章</a></li>
+					<li class='collapse '><a href="#">作品</a></li>
+					<li class='collapse '><a href="profile.html">关于</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section class="timeline">
+			<div class="timeline-block">
+				<div class="">
+					<img src="images/pic03.jpg" class="img-circular img-circular-l img-circular-s img-circular-top shadow-l">
+				</div>				
+				<div class="tl-title text-right ">NAME</div>
+				<div class="tl-mes text-indent">这是一段自我介绍，这是一段自我介绍，这是一段自我介绍，这是一段自我介绍，这是一段自我介绍，这是一段自我介绍，这是一段自我介绍</div>
+			</div>
+			<div class="timeline-block">
+				<div class="timeline-block-img ">
+					<img src="images/pic04.jpg" class="img-circular img-circular-m img-circular-xs  shadow-m">
+				</div>				
+				<div class="tl-title text-right ">联系方式</div>
+				<div class="tl-mes">联系方式1：xxxxxxx<br>联系方式2：xxxxxxx<br>联系方式3：xxxxxxx</div>
+			</div>
+			<div class="timeline-block m-bottom15">
+				<div class="timeline-block-img ">
+					<img src="images/pic04.jpg" class="img-circular img-circular-m img-circular-xs  shadow-m">
+				</div>				
+				<div class="tl-title text-right ">教育经历</div>
+				<div class="tl-time-block">
+					<div class="shadow-m tl-time">
+						<span>2008</span>
+					</div><br>
+					<div class="shadow-m tl-time">
+						<span>2011</span>
+					</div><br>
+					<div class="shadow-m tl-time">
+						<span>2015</span>
+					</div>
+				</div>
+				<div class="tl-text-block">
+					<div class="tl-text">某某某某高中</div>
+					<div class="tl-text">某某某某高中<br>某某学院 某某专业</div>
+					<div class="tl-text">某某某某高中<br>某某学院 某某专业</div>
+				</div>
+			</div>
+			<div class="timeline-block ">
+				<div class="timeline-block-img ">
+					<img src="images/pic04.jpg" class="img-circular img-circular-m img-circular-xs  shadow-m">
+				</div>				
+				<div class="tl-title text-right ">实习经历</div>
+				<div class="tl-time-block">
+					<div class="shadow-m tl-time">
+						<span>2008</span>
+					</div><br>
+					<div class="shadow-m tl-time">
+						<span>2011</span>
+					</div>
+				</div>
+				<div class="tl-text-block ">
+					<div class="tl-text">某某某某公司<br>主要工作描述</div>
+					<div class="tl-text">某某某某公司<br>主要工作描述</div>
+				</div>
+			</div>
+		</section>
+		<footer class="text-center">
+			<div class="footer-text">
+				<ul>
+					<li class="p-lr-1"><a href="">首页</a></li>
+					<li class="p-lr-1"><a href="">首页</a></li>
+					<li class="p-lr-1"><a href="">首页</a></li>
+					<li class="p-lr-1"><a href="">首页</a></li>
+				</ul>
+				<hr>
+				<div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div class="p-lr-2">
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<!-- 清楚浮动，填充footer大小 -->
+					<div class="clear"></div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
