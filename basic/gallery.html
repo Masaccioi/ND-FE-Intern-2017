@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>gallery</title>
+	<link href="css/common.css" rel="stylesheet" type="text/css" >
+	<link href="css/style.css" rel="stylesheet" type="text/css" >
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div class="container container-bg">
+		<header>
+			<div class="banner-left text-center">
+				<h1><a href="index.html">YourLogo</a></h1>
+			</div>
+			<div class="right m-top1-5 m-right3 m-left-1 hidden">
+				<img src="images/github_white.png">
+			</div>
+			<button type="button" class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+					</button>
+			<nav class="right  m-right3">	
+				<ul>
+					<li class='collapse '><a href="index.html">首页</a></li>
+					<li class='collapse '><a href="blog.html">文章</a></li>
+					<li class='collapse '><a href="gallery.html">作品</a></li>
+					<li class='collapse '><a href="profile.html">关于</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section class="blog section-center">
+			<div class="blog-tags">
+				<div class="blog-search blog-tag">
+					<div>
+						<img src="images/search.png">
+						<input type="text" placeholder="Keywords">
+						<button class="blog-search-btn">GO</button>
+					</div>
+				</div>
+				<div class="blog-tag blog-text hidden">
+					<p>人气排行榜</p>
+					<p></p>
+				</div>
+			</div>
+			<div class="col-8 blog-article">
+				<ul class="tab-menu">
+					<li>
+						<input type="radio" id="tab1" checked>
+						<label for="tab1">ALL</label>
+						<div id="tab_menu1">aaaaa</div>
+					</li>
+					<li>
+						<input type="radio" id="tab2">
+						<label for="tab2">JavaScript Functions</label>
+						<div id="tab_menu2">bbbbbb</div>
+					</li>
+					<li>
+						<input type="radio" id="tab3">
+						<label for="tab3">UI Components</label>
+						<div id="tab_menu3">ccccc</div>
+					</li>
+					<li>
+						<input type="radio" id="tab4" >
+						<label for="tab4">Framework</label>
+						<div id="tab_menu4">dddd</div>
+					</li>
+					<li>
+						<input type="radio" id="tab5" >
+						<label for="tab5">Application</label>
+						<div id="tab_menu5">eeee</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

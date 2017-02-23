@@ -3,48 +3,131 @@
 <head>
 	<meta charset=utf-8>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>profile</title>
+	<title>blog</title>
+	<link href="css/common.css" rel="stylesheet" type="text/css" >
 	<link href="css/style.css" rel="stylesheet" type="text/css" >
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<style type="text/css">
-		.blog{
-			width: 95%;
-			max-width:1100px; 
-			background-color: #eee;
-			height: 1500px;
-		}
-		.blog-article{
-			width: 95%;
-			float: right;
-		}
-		.blog-article article{
-			background-color: #fff;
-		}
-	</style>
 </head>
 <body>
 	<div class="container container-bg">
-		<section class="blog">
-			<div class="row">
-				<div class="blog-article col-9">
-					<article>
-						<h1>这里是文章的标题</h1>
-						<h3>这里是文章的副标题</h3>
-						<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
-						<p class="text-indent">
+		<header>
+			<div class="banner-left text-center">
+				<h1><a href="index.html">YourLogo</a></h1>
+			</div>
+			<div class="right m-top1-5 m-right3 m-left-1 hidden">
+				<img src="images/github_white.png">
+			</div>
+			<button type="button" class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+						<span class='icon-bar'></span>
+					</button>
+			<nav class="right  m-right3">	
+				<ul>
+					<li class='collapse '><a href="index.html">首页</a></li>
+					<li class='collapse '><a href="blog.html">文章</a></li>
+					<li class='collapse '><a href="gallery.html">作品</a></li>
+					<li class='collapse '><a href="profile.html">关于</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section class="blog section-center">
+			<div class="blog-tags">
+				<div class="blog-search blog-tag">
+					<div>
+						<img src="images/search.png">
+						<input type="text" placeholder="Keywords">
+						<button class="blog-search-btn">GO</button>
+					</div>
+				</div>
+				<div class="blog-tag hidden">
+					<ul>
+						<li><a href="">HTML</a></li>
+						<li><a href="">CSS</a></li>
+						<li><a href="">JavaScript</a></li>
+						<li><a href="">其他文章</a></li>
+					</ul>
+				</div>
+				<div class="blog-cal blog-tag hidden" style="height:200px;">
+					
+				</div>
+				<div class="blog-tag blog-text hidden">
+					<p>Tags</p>
+					<p>
+						<span class="font1">JavaScript</span>
+						<span class="font2">css</span>
+						<span class="font4">flex </span>
+						<span class="font4">WebGL</span>
+						<span class="font1">HTML</span>
+						<span class="font3">Canvas</span>
+						<span class="font4">prototype</span>
+						<span class="font2">HTML5 </span>
+						<span class="font4">grid </span>
+						<span class="font3">nodeJS</span>
+						<span class="font3">CSS3</span>
+						<span class="font2">jQuery</span>
+						<span class="font2">ECharts</span>
+					</p>
+				</div>
+			</div>
+			<div class="col-8 blog-article">
+				<article>
+					<div class="blog-mark">
+					<p class="blog-time">4.12</p>
+					<p class="blog-type">CSS</p>
+					</div>
+					<h1>这里是文章的标题</h1>
+					<h3>这里是文章的副标题</h3>
+					<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					<p class="text-indent">
 						这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
-						<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
-						<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
-						<span>4.12</span>
-						<span>CSS</span>
-						<span>YOUR 发表于 2015年4月12日</span>
-
-					</article>
-				</div>
-				<div class="col-3">
-
-				</div>
-
+					<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					
+					<span class="blog-author">YOUR 发表于 2015年4月12日</span>
+				</article>
+				<article>
+					<div class="blog-mark">
+					<p class="blog-time">4.12</p>
+					<p class="blog-type">CSS</p>
+					</div>
+					<h1>这里是文章的标题</h1>
+					<h3>这里是文章的副标题</h3>
+					<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					<p class="text-indent">
+						这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					
+					<span class="blog-author">YOUR 发表于 2015年4月12日</span>
+				</article>
+				<article>
+					<div class="blog-mark">
+					<p class="blog-time">4.12</p>
+					<p class="blog-type">CSS</p>
+					</div>
+					<h1>这里是文章的标题</h1>
+					<h3>这里是文章的副标题</h3>
+					<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					<p class="text-indent">
+						这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					<p class="text-indent">这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，这里是正文，</p>
+					
+					<span class="blog-author">YOUR 发表于 2015年4月12日</span>
+				</article>
+				<ul class="hidden">
+					<li class="dim">第一页</li>
+					<li class="dim">上一页</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>...</li>
+					<li>下一页</li>
+					<li>最后页</li>
+				</ul>
 			</div>
 		</section>
 	</div>

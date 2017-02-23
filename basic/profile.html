@@ -4,85 +4,13 @@
 	<meta charset=utf-8>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>profile</title>
+	<link href="css/common.css" rel="stylesheet" type="text/css" >
 	<link href="css/style.css" rel="stylesheet" type="text/css" >
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-
-	<style type="text/css">
-		.timeline{
-			width: 95%;
-			max-width: 980px;
-			background-color: #fff;
-			height: 1700px;
-			margin: 0 auto;
-			margin-top:100px; 
-			margin-bottom: 80px;
-		}
-		.timeline::before{
-			content: '';
-			position: absolute;
-			top: 160px;
-			height: 1700px;
-			width: 7px;
-			background: #eee;
-			left: 50%;
-		}
-		.timeline-block {
-			position: relative;
-		}
-		.timeline-block  img{
-			left: 50%;
-		}
-		.timeline-block-img{
-			margin-bottom: 2em;
-		}
-		.timeline-block .tl-title{
-		    width: 40%;
-		    font-size: 1.5em;
-		}
-		.timeline-block .tl-mes{
-			width: 40%;
-			max-width: 310px;
-			position: relative;
-		    left: 50%;
-		    top: -62px;
-		    padding: 2em;
-		}
-		.tl-time-block,.tl-text-block{
-			position: absolute; 
-			left: 50%;
-			top: 82%;
-		}
-		.tl-time-block .tl-time{
-			display: inline-block;
-			border-radius: 2px;
-			background-color: #eee;
-			padding: 6px 0px;
-			margin-left: -1.7em;
-			margin-bottom: 3em;
-		}
-		.timeline-block span{
-			background-color: #fff;
-			border-radius: 0.4em;
-    		padding: 0.3em 0.7em;
-		}
-		.tl-text-block{
-			    margin-left: 3em;
-		}
-		.tl-text{
-			margin-bottom: 3em;
-		}
-
-		@media (max-width: 767px) { 
-			.timeline{
-
-			}
-		}
-	</style>
 </head>
 <body>
 	<div class="container container-bg">
 		<header>
-			
 			<div class="banner-left text-center">
 				<h1><a href="index.html">YourLogo</a></h1>
 			</div>
@@ -98,13 +26,13 @@
 			<nav class="right  m-right3">	
 				<ul>
 					<li class='collapse '><a href="index.html">首页</a></li>
-					<li class='collapse '><a href="#">文章</a></li>
-					<li class='collapse '><a href="#">作品</a></li>
+					<li class='collapse '><a href="blog.html">文章</a></li>
+					<li class='collapse '><a href="gallery.html">作品</a></li>
 					<li class='collapse '><a href="profile.html">关于</a></li>
 				</ul>
 			</nav>
 		</header>
-		<section class="timeline">
+		<section class="timeline section-center">
 			<div class="timeline-block">
 				<div class="">
 					<img src="images/pic03.jpg" class="img-circular img-circular-l img-circular-s img-circular-top shadow-l">
