@@ -3,7 +3,7 @@
 <head>
 	<meta charset=utf-8>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>index</title>
 	<link href="css/common.css" rel="stylesheet" type="text/css" >
 	<link href="css/style.css" rel="stylesheet" type="text/css" >
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
@@ -11,20 +11,17 @@
 
 <body>
 	<div class="container">
-		<header>
-			<div class="banner-left text-center">
-				<h1><a href="index.html">YourLogo</a></h1>
+		<header class="purple-bg">
+			<div class="header-title">
+				<button type="button" class="navbar-toggle right">
+					<span class="">t</span>
+				</button>
+				<h1><a href="index.html" class="white">YourLogo</a></h1>
 			</div>
-			<div class="right m-top1-5 m-right3 m-left-1 hidden">
-				<img src="images/github_white.png">
+			<div class="header-logo right ">
+				<img src="images/github_white.png" class="hidden">
 			</div>
-			<button type="button" class="navbar-toggle">
-						<span class="sr-only">Toggle navigation</span>
-						<span class='icon-bar'></span>
-						<span class='icon-bar'></span>
-						<span class='icon-bar'></span>
-					</button>
-			<nav class="right  m-right3">	
+			<nav class="right">	
 				<ul>
 					<li class='collapse '><a href="index.html">首页</a></li>
 					<li class='collapse '><a href="blog.html">文章</a></li>
@@ -34,29 +31,29 @@
 			</nav>
 		</header>
 		<section class="section-1">
-			<div class="banner-text">
-				<p class="text-right">标题1</p>
-				<span class="banner-mes text-indent">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</span>
+			<div class="modal white">
+				<p class="text-right modal-title">标题1</p>
+				<p class="text-indent">正文正文正文正文正文正文正文正文正文正文正文正文正文文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p>
 			</div>
 		</section>
-		<section class="section-2 p-top2 p-bottom9 text-center">
-			<div class="m-left4">
-				<figure class="col-4 m-lef-5 p-0-5" >
+		<section class="section-2">
+			<div class="clearfix">
+				<figure class="col-4" >
 					<img src="images/pic02.jpeg" class="img-responsive">
 					<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
 				</figure>
-				<figure class="col-4 p-0-5">
-					<img src="images/pic02.jpeg" class="img-responsive ">
-					<figcaption class="text-indent">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
-				</figure>
-				<figure class="col-4 p-0-5">
+				<figure class="col-4" >
 					<img src="images/pic02.jpeg" class="img-responsive">
-					<figcaption class="text-indent">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
+					<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文<p class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p></figcaption>
+				</figure>
+				<figure class=" col-4" >
+					<img src="images/pic02.jpeg" class="img-responsive">
+					<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
 				</figure>
 			</div>
 		</section>	
-		<section class="section-3 text-center">
-			<div class="banner-info p-bottom10">
+		<section class="section-3">
+			<div class="jumbotron introduction">
 				<img src="images/pic02.jpeg" class="img-circular img-circular-l img-circular-s img-circular-top">
 				<article>
 					<h3>Hi,I'm XXX</h3>
@@ -66,16 +63,31 @@
 			</div>
 		</section>
 		<footer class="text-center">
-			<div class="footer-text">
+			<div class="footer-content">
 				<ul>
-					<li class="p-lr-1"><a href="">首页</a></li>
-					<li class="p-lr-1"><a href="">首页</a></li>
-					<li class="p-lr-1"><a href="">首页</a></li>
-					<li class="p-lr-1"><a href="">首页</a></li>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="blog.html">文章</a></li>
+					<li><a href="gallery.html">作品</a></li>
+					<li><a href="profile.html">关于</a></li>
 				</ul>
 				<hr>
 				<div>
-					<div class="p-lr-2">
+					<div>
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div>
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div >
 						<span>学习资料</span>
 						<ul>
 							<li><a href="">Link</a></li>
@@ -84,26 +96,7 @@
 							<li><a href="">Link</a></li>
 						</ul>
 					</div>
-					<div class="p-lr-2">
-						<span>学习资料</span>
-						<ul>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-						</ul>
-					</div>
-					<div class="p-lr-2">
-						<span>学习资料</span>
-						<ul>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-						</ul>
-					</div>
-					<div class="p-lr-2">
+					<div >
 						<span>学习资料</span>
 						<ul>
 							<li><a href="">Link</a></li>
@@ -112,10 +105,9 @@
 							<li><a href="">Link</a></li>
 						</ul>
 					</div>
-					<div class="p-lr-2">
+					<div>
 						<span>学习资料</span>
 						<ul>
-							<li><a href="">Link</a></li>
 							<li><a href="">Link</a></li>
 							<li><a href="">Link</a></li>
 							<li><a href="">Link</a></li>

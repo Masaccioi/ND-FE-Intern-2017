@@ -9,21 +9,18 @@
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-	<div class="container container-bg">
-		<header>
-			<div class="banner-left text-center">
-				<h1><a href="index.html">YourLogo</a></h1>
+	<div class="container">
+		<header class="purple-bg">
+			<div class="header-title">
+				<button type="button" class="navbar-toggle right">
+					<span class="">t</span>
+				</button>
+				<h1><a href="index.html" class="white">YourLogo</a></h1>
 			</div>
-			<div class="right m-top1-5 m-right3 m-left-1 hidden">
-				<img src="images/github_white.png">
+			<div class="header-logo right ">
+				<img src="images/github_white.png" class="hidden">
 			</div>
-			<button type="button" class="navbar-toggle">
-						<span class="sr-only">Toggle navigation</span>
-						<span class='icon-bar'></span>
-						<span class='icon-bar'></span>
-						<span class='icon-bar'></span>
-					</button>
-			<nav class="right  m-right3">	
+			<nav class="right">	
 				<ul>
 					<li class='collapse '><a href="index.html">首页</a></li>
 					<li class='collapse '><a href="blog.html">文章</a></li>
@@ -32,12 +29,12 @@
 				</ul>
 			</nav>
 		</header>
-		<section class="timeline section-center">
+		<section class="timeline jumbotron white-bg">
 			<div class="timeline-block">
-				<div class="">
+				<div>
 					<img src="images/pic03.jpg" class="img-circular img-circular-l img-circular-s img-circular-top shadow-l">
 				</div>				
-				<div class="tl-title text-right ">NAME</div>
+				<div class="tl-title text-right">NAME</div>
 				<div class="tl-mes text-indent">这是一段自我介绍，这是一段自我介绍，这是一段自我介绍，这是一段自我介绍，这是一段自我介绍，这是一段自我介绍，这是一段自我介绍</div>
 			</div>
 			<div class="timeline-block">
@@ -48,10 +45,15 @@
 				<div class="tl-mes">联系方式1：xxxxxxx<br>联系方式2：xxxxxxx<br>联系方式3：xxxxxxx</div>
 			</div>
 			<div class="timeline-block m-bottom15">
-				<div class="timeline-block-img ">
+				<div class="timeline-block-img">
 					<img src="images/pic04.jpg" class="img-circular img-circular-m img-circular-xs  shadow-m">
 				</div>				
 				<div class="tl-title text-right ">教育经历</div>
+				<div class="tl-text-block">
+					<div>某某某某高中</div>
+					<div>某某某某高中<br>某某学院 某某专业</div>
+					<div>某某某某高中<br>某某学院 某某专业</div>
+				</div>
 				<div class="tl-time-block">
 					<div class="shadow-m tl-time">
 						<span>2008</span>
@@ -63,17 +65,17 @@
 						<span>2015</span>
 					</div>
 				</div>
-				<div class="tl-text-block">
-					<div class="tl-text">某某某某高中</div>
-					<div class="tl-text">某某某某高中<br>某某学院 某某专业</div>
-					<div class="tl-text">某某某某高中<br>某某学院 某某专业</div>
-				</div>
+				
 			</div>
 			<div class="timeline-block ">
 				<div class="timeline-block-img ">
 					<img src="images/pic04.jpg" class="img-circular img-circular-m img-circular-xs  shadow-m">
 				</div>				
 				<div class="tl-title text-right ">实习经历</div>
+				<div class="tl-text-block ">
+					<div class="tl-text">某某某某公司<br>主要工作描述</div>
+					<div class="tl-text">某某某某公司<br>主要工作描述</div>
+				</div>
 				<div class="tl-time-block">
 					<div class="shadow-m tl-time">
 						<span>2008</span>
@@ -82,23 +84,34 @@
 						<span>2011</span>
 					</div>
 				</div>
-				<div class="tl-text-block ">
-					<div class="tl-text">某某某某公司<br>主要工作描述</div>
-					<div class="tl-text">某某某某公司<br>主要工作描述</div>
-				</div>
 			</div>
 		</section>
 		<footer class="text-center">
-			<div class="footer-text">
+			<div class="footer-content">
 				<ul>
-					<li class="p-lr-1"><a href="">首页</a></li>
-					<li class="p-lr-1"><a href="">首页</a></li>
-					<li class="p-lr-1"><a href="">首页</a></li>
-					<li class="p-lr-1"><a href="">首页</a></li>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="blog.html">文章</a></li>
+					<li><a href="gallery.html">作品</a></li>
+					<li><a href="profile.html">关于</a></li>
 				</ul>
 				<hr>
 				<div>
-					<div class="p-lr-2">
+					<div>
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div>
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div >
 						<span>学习资料</span>
 						<ul>
 							<li><a href="">Link</a></li>
@@ -107,26 +120,7 @@
 							<li><a href="">Link</a></li>
 						</ul>
 					</div>
-					<div class="p-lr-2">
-						<span>学习资料</span>
-						<ul>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-						</ul>
-					</div>
-					<div class="p-lr-2">
-						<span>学习资料</span>
-						<ul>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-							<li><a href="">Link</a></li>
-						</ul>
-					</div>
-					<div class="p-lr-2">
+					<div >
 						<span>学习资料</span>
 						<ul>
 							<li><a href="">Link</a></li>
@@ -135,10 +129,9 @@
 							<li><a href="">Link</a></li>
 						</ul>
 					</div>
-					<div class="p-lr-2">
+					<div>
 						<span>学习资料</span>
 						<ul>
-							<li><a href="">Link</a></li>
 							<li><a href="">Link</a></li>
 							<li><a href="">Link</a></li>
 							<li><a href="">Link</a></li>
