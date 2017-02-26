@@ -9,21 +9,18 @@
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-	<div class="container container-bg">
-		<header>
-			<div class="banner-left text-center">
-				<h1><a href="index.html">YourLogo</a></h1>
+	<div class="container">
+		<header class="purple-bg">
+			<div class="header-title">
+				<button type="button" class="navbar-toggle right">
+					<span class="">t</span>
+				</button>
+				<h1><a href="index.html" class="white">YourLogo</a></h1>
 			</div>
-			<div class="right m-top1-5 m-right3 m-left-1 hidden">
-				<img src="images/github_white.png">
+			<div class="header-logo right ">
+				<img src="images/github_white.png" class="hidden">
 			</div>
-			<button type="button" class="navbar-toggle">
-						<span class="sr-only">Toggle navigation</span>
-						<span class='icon-bar'></span>
-						<span class='icon-bar'></span>
-						<span class='icon-bar'></span>
-					</button>
-			<nav class="right  m-right3">	
+			<nav class="right">	
 				<ul>
 					<li class='collapse '><a href="index.html">首页</a></li>
 					<li class='collapse '><a href="blog.html">文章</a></li>
@@ -32,50 +29,311 @@
 				</ul>
 			</nav>
 		</header>
-		<section class="blog section-center">
-			<div class="blog-tags">
-				<div class="blog-search blog-tag">
-					<div>
-						<img src="images/search.png">
-						<input type="text" placeholder="Keywords">
-						<button class="blog-search-btn">GO</button>
+		<section class="jumbotron blog gallery clearfix">
+			<div class="col-8 tab">
+				<!-- tab页的menu -->
+				<input type="radio" id="tab1" name="tabs"  checked>
+				<label for="tab1">ALL</label>
+				<input type="radio" id="tab2" name="tabs" >
+				<label for="tab2">JavaScript Functions</label>
+				<input type="radio" id="tab3" name="tabs" >
+				<label for="tab3">UI Components</label>
+				<input type="radio" id="tab4" name="tabs" >
+				<label for="tab4">Framework</label>
+				<input type="radio" id="tab5" name="tabs" >
+				<label for="tab5">Application</label>
+				<!-- tab页内容 -->
+				<div id="content1" class="waterfall">
+					<div class="pin">
+						<img src="images/pic01.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic05.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic02.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic01.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic06.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic03.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
 					</div>
 				</div>
-				<div class="blog-tag blog-text hidden">
-					<p>人气排行榜</p>
-					<p></p>
+				<div id="content2" class="waterfall">
+					<div class="pin">
+						<img src="images/pic07.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic03.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic01.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic06.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic06.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic03.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div></div>
+				<div id="content3" class="waterfall">
+					<div class="pin">
+						<img src="images/pic01.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic06.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic02.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic01.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic06.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic03.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div></div>
+				<div id="content4" class="waterfall">
+					<div class="pin">
+						<img src="images/pic06.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic01.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic02.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic01.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic06.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic03.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div></div>
+				<div id="content5" class="waterfall">
+					<div class="pin">
+						<img src="images/pic05.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic07.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic01.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic01.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic06.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div>
+					<div class="pin">
+						<img src="images/pic03.jpg">
+						<div>
+							<h3>这里是标题</h3>
+							<p>这里是内容啊内容啊内容啊内容啊内容啊内容啊内容</p>
+						</div>
+					</div></div>
+			</div>
+			<div class="blog-tags">
+				<div class="blog-tag">
+					<div>
+						<input type="text" placeholder="Keywords">
+						<img src="images/search.png">
+						<button class="white ">GO</button>
+					</div>
+				</div>
+				<div class="blog-tag hidden">
+					<ul>
+						<li><a href="">HTML</a></li>
+						<li><a href="">CSS</a></li>
+						<li><a href="">JavaScript</a></li>
+						<li><a href="">其他文章</a></li>
+					</ul>
 				</div>
 			</div>
-			<div class="col-8 blog-article">
-				<ul class="tab-menu">
-					<li>
-						<input type="radio" id="tab1" checked>
-						<label for="tab1">ALL</label>
-						<div id="tab_menu1">aaaaa</div>
-					</li>
-					<li>
-						<input type="radio" id="tab2">
-						<label for="tab2">JavaScript Functions</label>
-						<div id="tab_menu2">bbbbbb</div>
-					</li>
-					<li>
-						<input type="radio" id="tab3">
-						<label for="tab3">UI Components</label>
-						<div id="tab_menu3">ccccc</div>
-					</li>
-					<li>
-						<input type="radio" id="tab4" >
-						<label for="tab4">Framework</label>
-						<div id="tab_menu4">dddd</div>
-					</li>
-					<li>
-						<input type="radio" id="tab5" >
-						<label for="tab5">Application</label>
-						<div id="tab_menu5">eeee</div>
-					</li>
-				</ul>
-			</div>
 		</section>
+		<footer class="text-center">
+			<div class="footer-content">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="blog.html">文章</a></li>
+					<li><a href="gallery.html">作品</a></li>
+					<li><a href="profile.html">关于</a></li>
+				</ul>
+				<hr>
+				<div>
+					<div>
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div>
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div >
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div >
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<div>
+						<span>学习资料</span>
+						<ul>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+							<li><a href="">Link</a></li>
+						</ul>
+					</div>
+					<!-- 清楚浮动，填充footer大小 -->
+					<div class="clear"></div>
+				</div>
+			</div>
+		</footer>
 	</div>
 </body>
 </html>
