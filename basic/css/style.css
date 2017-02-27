@@ -13,6 +13,7 @@ ul{
 	font-family:  '宋体';
 	position: relative;
 	background-color: #eee;
+	overflow: hidden;
 }
 /*头部尾部样式*/
 header{
@@ -25,6 +26,7 @@ header .header-title{
 	display: inline-block;
 	position: absolute;
     width: 80%;
+    /*居中*/
     margin: auto;
     left: 0;top: 0;bottom: 0;right: 0;
 }
@@ -35,22 +37,21 @@ header .header-title h1{
 }
 .navbar-toggle{
 	display: none;
-	padding: 14px 22px;
-	border: 1px solid transparent;
-	border-radius: 7px;
-	margin-top: 18px;
+	padding: 22px 27px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    margin-top: 18px;
 }
 header nav{
 	height: 80px;
 	display: inline-block;
-	margin-right: 1%;
+	position: absolute;
+	right: 13%;
 }
 header nav ul li{
 	font-size: 1.2em;
 	text-align: center;
-	cursor: pointer;
 	display: inline-block;
-	box-sizing:border-box;
 	line-height: 80px;
 	margin: 0 16px;
 }
@@ -59,8 +60,9 @@ header nav ul li a{
 }
 header .header-logo{
 	display: inline-block;
-	margin-right: 10%;
+	position: absolute;
 	margin-top: 31px;
+	right: 9%;
 }
 footer{
 	width: 100%;
@@ -124,27 +126,31 @@ footer .footer-content div div ul li a:hover{
 .section-2{
 	width: 100%;
 	position: relative;
+	margin-top: 1em;
+	margin-bottom: 10em;
+	overflow: hidden;
 }
-.section-2 div{
+.section-2 .figures{
 	width: 90%;
 	max-width: 1500px;
 	margin: 0 auto;
+	/*让三列布局等高*/
 }
-.section-2 div figure{
+.section-2 .figure{
 	background-color: #fff;
-	margin-left: 10px;
-	margin-top: 2em;
-	margin-bottom: 5em;
-	padding: 10px;
+	/*让三列布局等高,数字可以尽可能大*/
+	margin-bottom: -500px;
+    padding-bottom: 500px;
+    margin-right: 10px;
 }
-.section-2 div figure img{
-	/*margin: 10px;*/
+.section-2 .figure figcaption{
+	margin: 20px;
 }
-.section-2 div figure:nth-of-type(1){
-	margin-left: -60px;
+.section-2 .figure:nth-child(1){
+	margin-left: -30px;
 }
-.section-2 div figure figcaption{
-	margin: 0.5em 1em 1.5em 1em;
+figure{
+	margin: 10px;
 }
 .section-3{
 	width: 100%;
@@ -225,6 +231,7 @@ footer .footer-content div div ul li a:hover{
 .blog{
 	width: 90%;
 	max-width: 1000px;
+	min-height: 1300px;
 }
 .blog-tags{
 	width: 30%;
@@ -278,7 +285,7 @@ footer .footer-content div div ul li a:hover{
 	background-color: #A660B7;
 	color: #fff;
 }
-.blog-tag div{
+.search div{
 	position: relative;
 	height: 80px;
 }
@@ -307,16 +314,71 @@ footer .footer-content div div ul li a:hover{
     padding: 8px 11px;
     font-size: 1.5em;
 }
-.blog-tag ul{
+.blog-tag-menu ul{
 	margin-left: -40px;
 }
-.blog-tag ul li{
+.blog-tag-menu ul li{
 	padding: 10px 5px;
 	border-bottom: 1px solid #ddd;
 	border-left: 6px solid #DFC6E6;
 }
-.blog-tag ul li:hover{
+.blog-tag-menu ul li:hover{
 	border-left: 6px solid #522A5C;
+}
+
+/*日历样式*/
+.calendar{
+	width: 100%;
+	height: 325px;
+	overflow: hidden;
+	font-size: 16px;
+}
+.time{
+	width: 100%;
+	position: relative;
+}
+.time .time_today{
+	height: 35px;
+	line-height: 35px;
+	margin: 0 auto;
+	text-align: center;
+	width: 100px;
+	color: #773C88;
+	font-weight: bolder;
+	margin-top: 10px;
+}
+	
+.time div{
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	top:0px;
+}
+.time_nextmonth{
+	position: absolute;
+	right: 0px;
+	margin-right: -44px;
+}
+.time_lastmonth{
+	position: absolute;
+	left: 0px;
+	margin-left: 20px;
+
+}
+.calendar  ul{
+	margin-left: -10px;
+}
+.calendar  li{
+	color: #999;
+	list-style: none;
+	float: left;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
 }
 .blog-tag:nth-of-type(4){
 	padding:0 1em 1em;
@@ -389,24 +451,142 @@ footer .footer-content div div ul li a:hover{
 }
 
 .waterfall{
-	-moz-column-count: 3;
-	-webkit-column-count: 3;
-	column-count: 3;
+	-moz-column-count: 4;
+	-webkit-column-count: 4;
+	/*一行分为4列*/
+	column-count: 4;
 	-moz-column-width: 10em;
 	-webkit-column-width: 10em;
+	/*每列的宽度*/
 	column-width: 10em;
-	padding: 10px;
+	column-gap:10px;
+	padding: 20px;
 }
-.pin{
-	background-color: red;
+.pin div{
+	position: relative;
+	width: 77%;
+	padding-right: 10px;
+	left: 45px;
+	font-size: 12px;
+	color: #fff;
+}
+.pin div p{
+	padding-bottom: 10px;
+}
+/*图片下的文本的字母 利用content*/
+.pin div:before{
+    width: 30px;
+    border: 1px solid #CBC9C9;
+    display: inline-block;
+    position: absolute;
+    left: -40px;
+    top: -5px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 7px 0px;
+}
+.pin:nth-child(4n+0) div:before{
+	content: 'J';
+}
+.pin:nth-child(4n+1) div:before{
+	content: 'A';
+}
+.pin:nth-child(4n+2) div:before{
+	content: 'F';
+}
+.pin:nth-child(4n+3) div:before{
+	content: 'U';
+}
+.pin:nth-child(4n+0){
+	background-color: #522A5C;
+}
+.pin:nth-child(4n+1){
+	background-color: #D9A300;
+}
+.pin:nth-child(4n+2){
+	background-color: #8C2300;
+}
+.pin:nth-child(4n+3){
+	background-color: #5900B2;
 }
 .pin img{
 	max-width: 100%;
+}
+
+.tab button{
+	width: 100%;
+	margin: 20px 0;
+	background-color: #fff;
+	border: none;
+	line-height: 50px;
+	color: #ccc;
+	position: relative;
+}
+.tab button img{
+	position: relative;
+	top: 12px; 
+}
+.blog-tags-gallery{
+	margin-top: 65px;
+	position: relative;
+}
+.blog-tags-gallery p{
+	padding: 17px 24px;
+}
+.tag-gallery div span:nth-child(1){
+	position: relative;
+    top: -26px;
+    left: 19px;
+    background-color: #522A5C;
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: #fff;
+}
+.tag-gallery div span:nth-child(3){
+	position: absolute;
+	float: right;
+	margin-left: 20px;
+}
+.progress{
+	width: 50%;
+	height: 20px;
+	background-color: #F6F6F6;
+	border: 1px solid #522A5C;
+	margin-left: 40px;
+	display: inline-block;
+	margin-bottom: 20px;
+	margin-left: 25px;
+}
+.progress_bar{
+	height: 20px;
+	background-color: #522A5C;
 }
 @media  (max-width:768px) {
 	/*头尾*/
 	.navbar-toggle{
 		display: block;
+	}
+	header nav{
+		position: absolute;
+	    z-index: 100;
+	    margin-top: 63px;
+	    width: 100%;
+	    margin-left: -25px;
+	    transition: width 2s;
+	}
+	.collapse{
+		display: none;
+	}
+	.in{
+		display: block;
+		background-color: #fff;
+		border-bottom: 1px solid #522A5C;
+	}
+	.in:nth-child(1){
+		background-color: #A660B7;
+	}
+	.in a{
+		color: #522A5C;
 	}
 	footer .footer-content{
 		width: 95%;
@@ -438,6 +618,15 @@ footer .footer-content div div ul li a:hover{
 	.modal p{
 		font-size: 2em;
 	}
+	.section-2 .figure{
+		width: 100%;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+	}
+	.section-2 .figure:nth-child(1){
+		margin-left: 0px;
+	}
+
 	.timeline-block .tl-mes{
 		width: 38%;
 	}
@@ -453,5 +642,12 @@ footer .footer-content div div ul li a:hover{
 		width: 100%;
 		margin-top: 80px;
 	}
-	
+	.tab{
+		width: 100%;
+		margin-top: 90px;
+	}
+	.blog-tags-gallery{
+		margin-top: 10px;
+	}
+
 }

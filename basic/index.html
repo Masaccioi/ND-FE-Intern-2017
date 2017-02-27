@@ -8,27 +8,26 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css" >
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 </head>
-
 <body>
 	<div class="container">
 		<header class="purple-bg">
 			<div class="header-title">
 				<button type="button" class="navbar-toggle right">
-					<span class="">t</span>
+					<span class=""></span>
 				</button>
 				<h1><a href="index.html" class="white">YourLogo</a></h1>
 			</div>
-			<div class="header-logo right ">
-				<img src="images/github_white.png" class="hidden">
-			</div>
-			<nav class="right">	
+			<nav >	
 				<ul>
-					<li class='collapse '><a href="index.html">首页</a></li>
-					<li class='collapse '><a href="blog.html">文章</a></li>
-					<li class='collapse '><a href="gallery.html">作品</a></li>
-					<li class='collapse '><a href="profile.html">关于</a></li>
+					<li class='collapse'><a href="index.html">首页</a></li>
+					<li class='collapse'><a href="blog.html">文章</a></li>
+					<li class='collapse'><a href="gallery.html">作品</a></li>
+					<li class='collapse'><a href="profile.html">关于</a></li>
 				</ul>
 			</nav>
+			<div class="header-logo ">
+				<img src="images/github_white.png" class="hidden">
+			</div>
 		</header>
 		<section class="section-1">
 			<div class="modal white">
@@ -37,24 +36,31 @@
 			</div>
 		</section>
 		<section class="section-2">
-			<div class="clearfix">
-				<figure class="col-4" >
-					<img src="images/pic02.jpeg" class="img-responsive">
-					<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
-				</figure>
-				<figure class="col-4" >
-					<img src="images/pic02.jpeg" class="img-responsive">
-					<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文<p class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p></figcaption>
-				</figure>
-				<figure class=" col-4" >
-					<img src="images/pic02.jpeg" class="img-responsive">
-					<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
-				</figure>
+			<div class="figures clearfix">
+				<div class="col-4 figure">
+					<figure>
+						<img src="images/pic02.jpg" class="img-responsive">
+						<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
+					</figure>
+				</div>
+				<div class="col-4 figure">
+					<figure>
+						<img src="images/pic02.jpg" class="img-responsive">
+						<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正正文正文正文正文正文正文正文正文正正文正文正文正文正文正文正文正文正正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文<p >正文正文正文正文正文正文正文正正文文正正文正文正文正文正文正文正文正正文正文文正文正文正文正文正文正正文正文正文正文正文正文正文正文正正文正</p>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-4 figure">
+					<figure>
+						<img src="images/pic02.jpg" class="img-responsive">
+						<figcaption class="text-indent ">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</figcaption>
+					</figure>
+				</div>
 			</div>
 		</section>	
 		<section class="section-3">
 			<div class="jumbotron introduction">
-				<img src="images/pic02.jpeg" class="img-circular img-circular-l img-circular-s img-circular-top">
+				<img src="images/pic02.jpg" class="img-circular img-circular-l img-circular-s img-circular-top">
 				<article>
 					<h3>Hi,I'm XXX</h3>
 					<!-- 英文字符X出现无法换行现象 -->
@@ -122,14 +128,7 @@
 
 
 
-	<script type="text/javascript">
-		$(function(){
-			$('.navbar-toggle').on('click',function() {
-				$('nav').removeClass('right').removeClass('m-right3');
-				$(".collapse").toggleClass("in");
-			});
-		})
-	</script>
+	<script type="text/javascript" src="js/common.js"></script>
 </body>
 
 </html>

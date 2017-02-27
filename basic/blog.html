@@ -13,7 +13,7 @@
 		<header class="purple-bg">
 			<div class="header-title">
 				<button type="button" class="navbar-toggle right">
-					<span class="">t</span>
+					<span class=""></span>
 				</button>
 				<h1><a href="index.html" class="white">YourLogo</a></h1>
 			</div>
@@ -22,10 +22,10 @@
 			</div>
 			<nav class="right">	
 				<ul>
-					<li class='collapse '><a href="index.html">首页</a></li>
-					<li class='collapse '><a href="blog.html">文章</a></li>
-					<li class='collapse '><a href="gallery.html">作品</a></li>
-					<li class='collapse '><a href="profile.html">关于</a></li>
+					<li class=' collapse'><a href="index.html">首页</a></li>
+					<li class=' collapse'><a href="blog.html">文章</a></li>
+					<li class=' collapse'><a href="gallery.html">作品</a></li>
+					<li class=' collapse'><a href="profile.html">关于</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -89,14 +89,14 @@
 				</ul>
 			</div>
 			<div class="blog-tags">
-				<div class="blog-tag">
+				<div class="blog-tag search">
 					<div>
 						<input type="text" placeholder="Keywords">
 						<img src="images/search.png">
 						<button class="white ">GO</button>
 					</div>
 				</div>
-				<div class="blog-tag hidden">
+				<div class="blog-tag hidden blog-tag-menu">
 					<ul>
 						<li><a href="">HTML</a></li>
 						<li><a href="">CSS</a></li>
@@ -104,8 +104,25 @@
 						<li><a href="">其他文章</a></li>
 					</ul>
 				</div>
-				<div class="blog-tag hidden" style="height:200px;">
-					
+				<div class="blog-tag hidden calendar" id="calendar">
+					<div class="time">
+						<div class="time_today" id="time_today">2016/4/8</div>
+						<div class="time_nextmonth" id="next">
+							<img src="images/more.png">
+						</div>
+						<div class="time_lastmonth" id="prev">
+							<img src="images/back.png">
+						</div>
+					</div>
+					<ul class="cal_week">
+						<li>S</li>
+						<li>M</li>
+						<li>T</li>
+						<li>W</li>
+						<li>T</li>
+						<li>F</li>
+						<li>S</li>
+					</ul>
 				</div>
 				<div class="blog-tag hidden purple3">
 					<p class="gray2 blog-tag-title">Tags</p>
@@ -179,10 +196,12 @@
 						</ul>
 					</div>
 					<!-- 清楚浮动，填充footer大小 -->
-					<div class="clear"></div>
+					<div class="clearfix"></div>
 				</div>
 			</div>
 		</footer>
 	</div>
+	<script type="text/javascript" src="js/calendar.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>
