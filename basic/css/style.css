@@ -565,6 +565,7 @@ figure{
 	/*头尾*/
 	.navbar-toggle{
 		display: block;
+		float: right;
 	}
 	header nav{
 		position: absolute;
@@ -587,6 +588,8 @@ figure{
 	}
 	.in a{
 		color: #522A5C;
+        width: 100%;
+        display: inline-block;
 	}
 	footer .footer-content{
 		width: 95%;
