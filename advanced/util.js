@@ -94,51 +94,111 @@ function getPosition (element) {
   const box = element.getBoundingClientRect()
   return box
 }
-
+/*
+* 未能匹配 tagName.className
+*
+*/
 function $ (selector) {
   const idReg = /^#([\w_\-]+)/
   const classReg = /^\.([\w_\-]+)/
   const tagReg = /^\w+$/i
   const attrReg = /(\w+)?\[([^=\]]+)(?:=(["'])?([^\]"']+)\3?)?\]/
 
-
   function find (parts) {
     const part = parts.pop()
     const actions = {
-      id: function (id) {
+      id (id) {
         return [document.getElementById(id)]
       },
-      className: function (className) {
+      className (className) {
         let result
         if (document.getElementsByClassName) {
           result = document.getElementsByClassName(className)
+        } else {
+          const temp = document.getElementsByTagName('*')
+          for (let i = 0; i < temp.length; i++) {
+            const node = temp[i]
+            if (hasClass(node, className)) {
+              result.push(node)
+            }
+          }
         }
         return result
       },
-      tagName: function (tagName) {
-        return document.getElementsByTagName(tagName)
+      tag (tag) {
+        return document.getElementsByTagName(tag)
       },
-      attrName: function (tag, key, value) {
-
+      attrName (tag, key, value) {
+        const result = []
+        let i
+        const temp = document.getElementsByTagName(tag || '*')
+        for (i = 0; i < temp.length; i++) {
+          const node = temp[i]
+          if (value) {
+            const v = node.getAttribute(key)
+            v === value && result.push(node)
+          } else if (node.hasAttribute(key)) {
+            result.push(node)
+          }
+        }
+        return result
       }
-
     }
     let ret = query(part, actions)
     ret = [].slice.call(ret)
-    return ret
+    return parts[0] && ret[0] ? filterParent(parts, ret) : ret
   }
-  function filerParent (parts, ret) {
-    let parentPart = parts.pop()
-    let result, i
-    for (i = 0; i < ret.length; i++) {
-      
-    }
 
+  function filterParent (parts, ret) {
+    const parentPart = parts.pop()
+    const result = []
+    let matchParent = false
+    let i
+    for (i = 0; i < ret.length; i++) {
+      const node = ret[i]
+      let p = node
+      while (p.tagName) {
+        p = p.parentNode
+        if (p.tagName === undefined) break
+        const actions = {
+          id (el, id) {
+            return (el.id === id)
+          },
+          className (el, className) {
+            return hasClass(el, className)
+          },
+          tag (el, tag) {
+            return (el.tagName.toLowerCase() === tag)
+          },
+          attrName (el, tag, key, value) {
+            let valid = true
+            if (tag) {
+              valid = actions.tag(el, tag)
+            }
+            valid = valid && el.hasAttribute(key)
+            if (value) {
+              valid = valid && (value === el.getAttribute(key))
+            }
+            return valid
+          }
+        }
+        matchParent = query(parentPart, actions, p)
+        if (matchParent) {
+          break
+        }
+      }
+      if (matchParent) {
+        result.push(node)
+      }
+    }
+    return parts[0] && result[0] ? filterParent(parts, result) : result
   }
+
   function query (part, actions) {
-    let fn, result
+    let fn
+    let result = []
     // 转数组 扩充参数个数
-    let params = [].slice.call(arguments, 2)
+    const params = [].slice.call(arguments, 2)
     if (result = part.match(idReg)) {
       fn = 'id'
       params.push(result[1])
@@ -146,15 +206,101 @@ function $ (selector) {
       fn = 'className'
       params.push(result[1])
     } else if (result = part.match(tagReg)) {
-      fn = 'tagName'
+      fn = 'tag'
       params.push(result[0])
     } else if (result = part.match(attrReg)) {
-
+      fn = 'attrName'
+      const tag = result[1]
+      const key = result[2]
+      const value = result[4]
+      params.push(tag, key, value)
     }
     return actions[fn].apply(null, params)
   }
+
   const result = find(selector.split(/\s+/))
-  return result
+  return result[0]
 }
+$.on = function (selector, event, listener) {
+  const element = $(selector.toString())
+  if (element.addEventListener) {
+    element.addEventListener(event, listener)
+  } else if (element.attachEvent) {
+    element.attachEvent('on' + event, listener)
+  }
+}
+
+$.un = function (selector, event, listener) {
+  const element = $(selector.toString())
+  if (element.removeEventListenr) {
+    element.removeEventListenr(event, listener)
+  } else if (element.detachEvent) {
+    element.detachEvent('on' + event, listener)
+  }
+}
+
+$.click = function (selector, listener) {
+  const element = $(selector.toString())
+  $.on(element, 'click', listener)
+}
+$.enter = function (selector, listener) {
+  const element = $(selector.toString())
+  $.on(element, 'keydown', function (event) {
+    if (event.keyCode === 13) {
+      listener()
+    }
+  })
+}
+$.delegate = function (selector, tag, eventName, listener) {
+  const element = $(selector.toString())
+  $.on(element, eventName, function (event) {
+    const target = event.target || event.srcElement
+    if (target.tagName.toLowerCase() === tag.toLowerCase()) {
+      listener.call(target, event)
+    }
+  })
+}
+function isIE() {
+  // ie10的信息：
+  // mozilla/5.0 (compatible; msie 10.0; windows nt 6.2; trident/6.0)
+  // ie11的信息：
+  // mozilla/5.0 (windows nt 6.1; trident/7.0; slcc2; .net clr 2.0.50727; .net clr 3.5.30729; .net clr 3.0.30729; media center pc 6.0; .net4.0c; .net4.0e; infopath.2; rv:11.0) like gecko
+  const s = navigator.userAgent.toLowerCase()
+  const ie = s.match(/rv:([\d.]+)/) || s.match(/msie ([\d.]+)/)
+  if (ie) {
+    return ie[1]
+  } else {
+    return -1
+  }
+}
+function setCookie (cookieName, cookieValue, expiredays) {
+  let expires
+  if (expiredays != null) {
+    expires = new Date()
+    expires.setTime(expires.getTime() + expiredays * 24 * 60 * 60 * 1000)
+  }
+  document.cookie = cookieName + '=' + encodeURIComponent(cookieValue) + (expires ? '; expires=' + expires.toGMTString() : '')
+}
+
+function getCookie(cookieName) {
+  const cookie = {}
+  const all = document.cookie
+  if (all === '') {
+    return cookie
+  }
+  const list = all.split('; ')
+  for (let i = 0; i < list.length; i++) {
+    const p = list[i].indexOf('=')
+    const name = list[i].substr(0, p)
+    let value = list[i].substr(p + 1)
+    value = decodeURIComponent(value)
+    cookie[name] = value
+  }
+  return cookie
+}
+function ajax(url, options) {
+    // your implement
+}
+
 
 
