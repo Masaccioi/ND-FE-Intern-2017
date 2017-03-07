@@ -221,44 +221,53 @@ function $ (selector) {
   const result = find(selector.split(/\s+/))
   return result[0]
 }
-$.on = function (selector, event, listener) {
-  const element = $(selector.toString())
+function addEvent (element, event, listener) {
   if (element.addEventListener) {
     element.addEventListener(event, listener)
   } else if (element.attachEvent) {
     element.attachEvent('on' + event, listener)
   }
 }
-
-$.un = function (selector, event, listener) {
-  const element = $(selector.toString())
+function removeEvent (element, event, listener) {
   if (element.removeEventListenr) {
     element.removeEventListenr(event, listener)
   } else if (element.detachEvent) {
     element.detachEvent('on' + event, listener)
   }
 }
-
-$.click = function (selector, listener) {
-  const element = $(selector.toString())
-  $.on(element, 'click', listener)
+function addClickEvent (element, listener) {
+  addEvent(element, 'click', listener)
 }
-$.enter = function (selector, listener) {
-  const element = $(selector.toString())
-  $.on(element, 'keydown', function (event) {
+function addEnterEvent (element, listener) {
+  addEvent(element, 'keydown', function (event) {
     if (event.keyCode === 13) {
       listener()
     }
   })
 }
-$.delegate = function (selector, tag, eventName, listener) {
-  const element = $(selector.toString())
-  $.on(element, eventName, function (event) {
+function delegateEvent (element, tag, eventName, listener) {
+  addEvent(element, eventName, function (event) {
     const target = event.target || event.srcElement
     if (target.tagName.toLowerCase() === tag.toLowerCase()) {
       listener.call(target, event)
     }
   })
+}
+$.on = function (selector, event, listener) {
+  return addEvent($(selector), event, listener)
+}
+
+$.un = function (selector, event, listener) {
+  return removeEvent($(selector), event, listener)
+}
+$.click = function (selector, listener) {
+  return addClickEvent($(selector), listener)
+}
+$.enter = function (selector, listener) {
+  return addEnterEvent($(selector), listener)
+}
+$.delegate = function (selector, tag, eventName, listener) {
+  return delegateEvent($(selector), tag, event, listener)
 }
 function isIE() {
   // ie10的信息：
@@ -299,7 +308,41 @@ function getCookie(cookieName) {
   return cookie
 }
 function ajax(url, options) {
-    // your implement
+  let dataResult
+  if (typeof (options.data) === 'object') {
+    let str = ''
+    for (const c in options.data) {
+      str = str + c + '=' + options.data[c] + '&'
+    }
+    dataResult = str.substring(0, str.length - 1)
+  }
+  options.type = options.type || 'GET'
+  // 获取XMLHttpRequest对象
+  const xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP')
+  // 发送请求
+  xhr.open(options.type, url, true)
+  if (options.type === 'GET') {
+    xhr.send(null)
+  } else {
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+    xhr.send(dataResult)
+  }
+
+  // 状态
+  xhr.onreadystatechange = function () {
+    // 4 响应完成
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        if (options.onsuccess) {
+          options.onsuccess(xhr.responseText, xhr.responseXML)
+        }
+      } else {
+        if (options.onfail) {
+          options.onfail()
+        }
+      }
+    }
+  }
 }
 
 
