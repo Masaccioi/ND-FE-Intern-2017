@@ -91,8 +91,10 @@ function isSiblingNode (element, siblingNode) {
   return element.parentNode === siblingNode.parentNode
 }
 function getPosition (element) {
-  const box = element.getBoundingClientRect()
-  return box
+  const pos = {}
+  pos.x = element.getBoundingClientRect().left + Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
+  pos.y = element.getBoundingClientRect().top + Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+  return pos
 }
 /*
 * 未能匹配 tagName.className
@@ -245,6 +247,8 @@ function addEnterEvent (element, listener) {
     }
   })
 }
+
+// 事件代理
 function delegateEvent (element, tag, eventName, listener) {
   addEvent(element, eventName, function (event) {
     const target = event.target || event.srcElement
@@ -254,20 +258,16 @@ function delegateEvent (element, tag, eventName, listener) {
   })
 }
 $.on = function (selector, event, listener) {
-  return addEvent($(selector), event, listener)
-}
-
-$.un = function (selector, event, listener) {
-  return removeEvent($(selector), event, listener)
+  addEvent($(selector), event, listener)
 }
 $.click = function (selector, listener) {
-  return addClickEvent($(selector), listener)
+  addClickEvent($(selector), listener)
 }
-$.enter = function (selector, listener) {
-  return addEnterEvent($(selector), listener)
+$.un = function (selector, event, listener) {
+  removeEvent($(selector), event, listener)
 }
-$.delegate = function (selector, tag, eventName, listener) {
-  return delegateEvent($(selector), tag, event, listener)
+$.delegate = function (selector, tag, event, listener) {
+  delegateEvent($(selector), tag, event, listener)
 }
 function isIE() {
   // ie10的信息：
