@@ -31,17 +31,19 @@
 
     target.style.border = '1px solid #333'
     target.style.opacity = 0.5
+    // 利用zIndex 可以让鼠标移动后target就是点击的target
     target.style.zIndex = z++
     const parent = target.parentNode
-    let firstMove = true
+    let flag = true
 
     // 鼠标移动
     document.onmousemove = function (e) {
-      if (firstMove) {
+      // 利用flag 第一次移动时候 parent移除它
+      if (flag) {
         parent.removeChild(target)
         $('.drag-block').appendChild(target)
       }
-      firstMove = false
+      flag = false
 
       if (outOfSreen(e.clientX, e.clientY, e)) {
         target.parentNode.removeChild(target)
@@ -51,13 +53,12 @@
         } else if (parent.className.search('right-block') !== -1) {
           target.style.left = rightBlockX + 1 + 'px'
         }
-        draw(parent)
         document.onmousemove = null
       } else {
         target.style.left = divLeft + e.clientX - disX + 'px'
         target.style.top = divTop + e.clientY - disY + 'px'
-        draw(parent)
       }
+      draw(parent)
     }
     document.onmouseup = function (e) {
       document.onmousemove = null
@@ -67,11 +68,12 @@
       target.style.opacity = 1
       const ev = e || window.event
       target.parentNode.removeChild(target)
-      if (judgeInBlock(ev.clientX, ev.clientY, oLeftBlock)) {
+      // 规则是把鼠标松掉的位置在框框里面，就会添加到框框里
+      if (isInBlock(ev.clientX, ev.clientY, oLeftBlock)) {
         oLeftBlock.appendChild(target)
         target.style.left = 1 + 'px'
         draw(oLeftBlock)
-      } else if (judgeInBlock(ev.clientX, ev.clientY, oRightBlock)) {
+      } else if (isInBlock(ev.clientX, ev.clientY, oRightBlock)) {
         oRightBlock.appendChild(target)
         target.style.left = rightBlockX + 1 + 'px'
         draw(oRightBlock)
@@ -92,11 +94,11 @@
     const maxH = document.documentElement.clientHeight
     return e.clientX <= 0 || e.clientX >= maxW || e.clientY <= 0 || e.clientY >= maxH
   }
-  function judgeInBlock (x, y, block) {
+  function isInBlock (x, y, block) {
     const x0 = getPosition(block).x
-    const x1 = getPosition(block).x + block.offsetWidth
+    const x1 = x0 + block.offsetWidth
     const y0 = getPosition(block).y
-    const y1 = getPosition(block).y + block.offsetHeight
+    const y1 = y0 + block.offsetHeight
     return x > x0 && x < x1 && y > y0 && y < y1
   }
 })()

@@ -272,59 +272,65 @@ $.delegate = function (selector, tag, event, listener) {
 function isIE() {
   // ie10的信息：
   // mozilla/5.0 (compatible; msie 10.0; windows nt 6.2; trident/6.0)
+  // ie10以前通过 msie X.0
   // ie11的信息：
   // mozilla/5.0 (windows nt 6.1; trident/7.0; slcc2; .net clr 2.0.50727; .net clr 3.5.30729; .net clr 3.0.30729; media center pc 6.0; .net4.0c; .net4.0e; infopath.2; rv:11.0) like gecko
+  // rv:X.0
+  // trident 内核
+  // Gecko是一套开放源代码、C++编写的网页排版引擎  Firefox
+  // webkit 内核 Safari Chrome
+
+  // match会返回匹配的内容的一个数组，（）数组里会多一个（）里面内容匹配的东西
   const s = navigator.userAgent.toLowerCase()
   const ie = s.match(/rv:([\d.]+)/) || s.match(/msie ([\d.]+)/)
+  // ie[0] = rv:11.0
+  // ie[1] = 11.0
   if (ie) {
     return ie[1]
   } else {
     return -1
   }
 }
+// escape() unescape() 编码和解码
+// Chrome本地不能处理cookie
 function setCookie (cookieName, cookieValue, expiredays) {
-  let expires
-  if (expiredays != null) {
-    expires = new Date()
-    expires.setTime(expires.getTime() + expiredays * 24 * 60 * 60 * 1000)
-  }
-  document.cookie = cookieName + '=' + encodeURIComponent(cookieValue) + (expires ? '; expires=' + expires.toGMTString() : '')
+  const expire = new Date()
+  expire.setDate(expire.getDate() + expiredays)
+  document.cookie = cookieName + '=' + escape(cookieValue) +
+   ((expiredays === null) ? '' : ';expire=' + expire.toGMTString())
 }
 
 function getCookie(cookieName) {
-  const cookie = {}
-  const all = document.cookie
-  if (all === '') {
-    return cookie
-  }
-  const list = all.split('; ')
-  for (let i = 0; i < list.length; i++) {
-    const p = list[i].indexOf('=')
-    const name = list[i].substr(0, p)
-    let value = list[i].substr(p + 1)
-    value = decodeURIComponent(value)
-    cookie[name] = value
-  }
-  return cookie
-}
-function ajax(url, options) {
-  let dataResult
-  if (typeof (options.data) === 'object') {
-    let str = ''
-    for (const c in options.data) {
-      str = str + c + '=' + options.data[c] + '&'
+  if (document.cookie.length > 0) {
+    let start = document.cookie.indexOf(cookieName + '=')
+    if (start !== -1) {
+      start = start + cookieName.length + 1
+      let end = document.cookie.indexOf(';', start)
+      if (end === -1) end = document.cookie.length
+      return unescape(document.cookie.substring(start, end))
     }
-    dataResult = str.substring(0, str.length - 1)
   }
+  return ''
+}
+function ajax (url, options) {
   options.type = options.type || 'GET'
   // 获取XMLHttpRequest对象
   const xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP')
   // 发送请求
+  //  Async=true
   xhr.open(options.type, url, true)
   if (options.type === 'GET') {
     xhr.send(null)
   } else {
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+    let dataResult
+    if (typeof (options.data) === 'object') {
+      let str = ''
+      for (const c in options.data) {
+        str = str + c + '=' + options.data[c] + '&'
+      }
+      dataResult = str.substring(0, str.length - 1)
+    }
     xhr.send(dataResult)
   }
 
