@@ -1,6 +1,6 @@
-function createCal () {
+(function () {
   const cal = document.getElementById('calendar')
-  const title = document.getElementById('time_today')
+  const title = document.getElementById('time-today')
   const currentDate = new Date()
   const currentYear = currentDate.getFullYear()
   let currentMonth = currentDate.getMonth()
@@ -41,5 +41,4 @@ function createCal () {
     }
     cal.appendChild(oUl)
   }
-}
-createCal()
+})()

@@ -337,7 +337,7 @@ figure{
 	width: 100%;
 	position: relative;
 }
-.time .time_today{
+.time .time-today{
 	height: 35px;
 	line-height: 35px;
 	margin: 0 auto;
@@ -356,12 +356,12 @@ figure{
 	cursor: pointer;
 	top:0px;
 }
-.time_nextmonth{
+.time-nextmonth{
 	position: absolute;
 	right: 0px;
 	margin-right: -44px;
 }
-.time_lastmonth{
+.time-lastmonth{
 	position: absolute;
 	left: 0px;
 	margin-left: 20px;
