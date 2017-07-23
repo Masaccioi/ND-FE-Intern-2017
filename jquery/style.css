@@ -261,28 +261,28 @@ main .page li.pagenow{
   text-align: right;
   margin: 10px 12px 10px 0px;
 }
-.modal .modal-content input, .author-input,.uplowd-btn{
+.modal .modal-content input, .author-list,.uplowd-btn{
   width: 300px;
   padding-left: 15px;
   border-radius: 4px;
 }
-.uplowd-btn, .author-input{
+.uplowd-btn, .author-list{
   display: inline-block;  
   background: #fff;
   border: 1px solid #e2e2e2;
   line-height: 36px;
   color: #a0a0a0;
 }
-.author label{
+/*.author label{
   position: relative;
   top: -54px;
-}
-.author-input{
+}*/
+.author-list{
   width: 400px;
   height: 72px;
   margin-top: 20px;
 }
-.icon-add-user{
+.icon-add-author{
   margin-left: 12px;
 }
 .uplowd-btn{
@@ -315,42 +315,43 @@ main .page li.pagenow{
   font-size: 12px;
   margin-top: 7px;
 }
-.class-users{
+.class-authors{
   height: 580px;
   width: 428px;
 }
-.class-users .modal-content{
+.class-authors .modal-content{
   padding: 0;
 }
-.username-search,.username-add-list{
+.authorname-search,.authorname-add-list{
   width: 145px;
   height: 425px;
   border: 1px solid #e2e2e2;
   margin: 20px;
 }
-.username-search{
+.authorname-search{
   position: relative;
   float: left;
 }
-.username-add-list{
+.authorname-add-list{
   float: right;
 }
-.modal-content .username-search input{
+.modal-content .authorname-search input{
   margin-top:-1px;
   margin-left: -1px;
   width: 130px; 
   border-radius: 0px;
 }
-.username-search .username-list{
+.authorname-search .authorname-list{
   display: block;
   height: 389px;
   overflow:scroll;
 }
-.username-list li.current-name{
+
+
+#authorname-list li:hover,#authorname-list .current-name,#authorname-add-list li:hover{
   background: #C3E5FA;  
 }
-
-.username-list ul li:hover{
+#authorname-list .addedName,.delete-name{
   background: #C3E5FA;  
 }
 ::-webkit-scrollbar {
@@ -377,9 +378,9 @@ main .page li.pagenow{
 .classes-btn:nth-child(3){
   top: 280px;
 }
-.username-search ul li,.username-add-list ul li{
+.authorname-search ul li,.authorname-add-list li{
   padding: 4px 0 4px 6px;
-  margin: 7px 0;
+  margin: 7px 2px;
 }
 .gray{
   background: #A9B3C6;

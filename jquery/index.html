@@ -324,7 +324,7 @@
     </main>
     <div class="mask1"></div>
     <div class="modal" id="add-work">
-      <p class="modal-title">新建作品<i class="close-modal1"></i></p>
+      <p class="modal-title">新建作品<img src="./image/works/icon-btn-close.png"></p>
       <form class="modal-content">
         <div>
           <label>资源名称</label>
@@ -332,8 +332,11 @@
         </div>
         <div class="author">
           <label>作者</label>
-          <div class="author-input"></div>
-          <img class="icon-add-user" src="./image/works/icon-add-user.png">
+          <div class="author-list" id="author-list">
+            <span>xxx</span>
+            <span>yyy</span>
+          </div>
+          <img class="icon-add-author" src="./image/works/icon-add-author.png">
         </div>
         <div>
           <label>配图</label>
@@ -349,43 +352,20 @@
         </div>
       </form>
     </div>
-    <div class="mask2"></div>
-    <div class="modal class-users" id="class-users">
+    <div class="mask2" id="mask2"></div>
+    <div class="modal class-authors" id="class-authors">
       <p class="modal-title">班级成员<img src="./image/works/icon-btn-close.png" class="close-modal2"></p>
       <form class="modal-content">
-          <div class="username-search">
-            <input>
-            <div class="icon-search"></div>
-            <div class="username-list">
-              <ul>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li> 
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li> 
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>
-                <li>张三疯</li>              
-              <ul>
-            </div>
+          <div class="authorname-search">
+            <input id="name-search-input">
+            <ul class="authorname-list" id="authorname-list"></ul>
           </div>
-          <button class="classes-btn button" id="add-username-btn">确定</button>
-          <button class="classes-btn gray">删除</button>
-          <div class="username-add-list" id="username-add-list">
-            <ul></ul>
-          </div>
+          <div class="classes-btn button" id="add-authorname-btn">确定</div>
+          <div class="classes-btn button gray" id="delete-authorname-btn">删除</div>
+          <ul class="authorname-add-list" id="authorname-add-list">
+          </ul>
         <div class="submit-btn">
-          <button>确定</button>
+          <div class="button" id="add-author-btn">确定</div>
         </div>
       </form>
     </div>
