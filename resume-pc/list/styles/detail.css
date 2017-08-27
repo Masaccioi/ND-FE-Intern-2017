@@ -1,0 +1,74 @@
+.ui-resume-template-detail {
+  font-size: 14px;
+  line-height: 40px;
+
+  & .item-label {
+    text-align: right;
+    padding-right: 10px;
+
+    & .must {
+      color: Red;
+      margin-right: 4px;
+    }
+  }
+
+  & .template-groups {
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px dashed #bfcbd9;
+    border-radius: 6px;
+  }
+
+  & .template-group {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #bfcbd9;
+    border-radius: 6px;
+  }
+
+  & .group-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  & .item-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border: 1px dashed #bfcbd9;
+    margin-bottom: 5px;
+
+    & .item-chmod {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      & .chmod-item {
+        max-width: 150px;
+        padding: 0 5px;
+        text-align: right;
+        box-sizing: border-box;
+        color: var(--primary);
+        font-size: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+
+  & .resume-detail-actions {
+    margin-top: 10px;
+  }
+}

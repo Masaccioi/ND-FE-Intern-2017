@@ -1,0 +1,8 @@
+{
+  "path_src": "src",
+  "i18n_helper": "__",
+  "path_i18n": "src/static/i18n",
+  "languages": ["zh-CN", "zh-HK", "en"],
+  "include_files": [".js", ".vue"],
+  "default_data": "src/static/i18n/default.json"
+}

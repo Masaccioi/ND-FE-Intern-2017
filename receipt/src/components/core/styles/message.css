@@ -1,0 +1,14 @@
+.c-message {
+  position: fixed;
+  z-index: 10001;
+  left: 0;
+  top: 0;
+  height: dpr(64px)
+  width: 100%
+  color: #0090ff
+  font-size: dpr(28px)
+  text-align: center;
+  background-color: #d4eeff;
+  box-sizing: border-box;
+  transform: translate3d(-50%, -50%, 0);
+}

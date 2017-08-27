@@ -1,0 +1,38 @@
+.ui-result-detail {
+  min-height: 100%;
+  background-color: var(--color7);
+
+  & .item-row {
+    background-color: var(--color7);
+    min-height: dpr(88px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .item-label {
+      width: dpr(200px);
+      padding-left: dpr(24px);
+      box-sizing: border-box;
+      color: var(--color4);
+      font-size: var(--text5);
+    }
+
+    & .item-value {
+      flex: 1;
+      color: var(--color1);
+      font-size: var(--text13);
+      line-height: dpr(48px);
+      padding: dpr(20px) dpr(20px) dpr(20px) 0;
+      box-sizing: border-box;
+      word-break: break-all;
+    }
+
+    &.c-row:first-child:before {
+      border: none;
+    }
+
+    &.c-row:last-child:after {
+      left: dpr(20px);
+    }
+  }
+}

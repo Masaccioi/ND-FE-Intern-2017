@@ -1,0 +1,41 @@
+.multi-group-items {
+  & .item-row {
+    height: dpr(88px);
+    line-height: dpr(88px);
+    padding-left: dpr(20px);
+    background-color: var(--color7);
+
+    & .item-col {
+      display: flex;
+      & .item-value {
+        font-size: var(--text13);
+        color: var(--color1);
+        &::placeholder {
+          font-size: var(--text13);
+          color: var(--color4);
+        }
+      }
+
+      & .item-label {
+        flex: 1 0 auto;
+        font-size: var(--text4);
+        color: var(--color1);
+        width: dpr(150px);
+        padding-right: dpr(20px);
+      }
+    }
+  }
+
+  & .delete-btn {
+    height: dpr(88px);
+    line-height: dpr(88px);
+    background-color: var(--color7);
+    color: var(--color13);
+    font-size: var(--text4);
+    border: none;
+
+    &:active {
+      background-color: color(var(--color13) lightness(+30%));
+    }
+  }
+}

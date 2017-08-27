@@ -1,0 +1,118 @@
+.ui-result-page {
+  & .ui-result-header {
+    height: dpr(60px);
+    line-height: dpr(60px);
+    font-size: var(--text5);
+    color: var(--color3);
+    background-color: var(--color7);
+    padding: 0 dpr(46px) 0 dpr(10px);
+
+    & .c-col {
+      text-align: center;
+      margin: 0 dpr(10px);
+    }
+
+    &.c-row::before {
+      border-color: var(--color9);
+    }
+
+    &.c-row::after {
+      left: 0;
+      border-color: var(--color8);
+    }
+  }
+
+  & .c-scroller {
+    background-color: var(--color10);
+    & .c-scroller-content {
+      margin-top: -1px;
+    }
+    & .c-scroller-indicator {
+      height: dpr(88px);
+      line-height: dpr(88px);
+      color: var(--color4);
+      font-size: var(--text13);
+      background-color: var(--color10);
+      padding: 0;
+
+      &-up {
+        bottom: -dpr(88px);
+      }
+
+      &-down {
+        top: -dpr(88px;)
+      }
+    }
+  }
+
+  & .item-row {
+    height: dpr(88px);
+    line-height: dpr(88px);
+    padding-left: dpr(10px);
+    background-color: var(--color7);
+
+    & a {
+      display: block;
+      width: 100%;
+      display: flex;
+      color: var(--color1);
+    }
+
+    &.c-row:avtive {
+      background-color: var(--color9);
+    }
+
+    &.c-row:after {
+      left: 0;
+    }
+
+    &.c-row:last-child {
+      &:after {
+        border-color: var(--color9);
+      }
+    }
+
+    & .c-col {
+      text-align: center;
+      margin: 0 dpr(10px);
+
+      & > div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    & .c-row-goin {
+      width: dpr(16px);
+      height: dpr(28px);
+      margin: dpr(30px) dpr(20px) dpr(30px) dpr(10px);
+    }
+  }
+}
+
+.ui-empty-result-page {
+  background-color: var(--color10);
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  & .empty-wrapper {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    margin-top: -dpr(150px);
+
+    & img {
+      width: dpr(240px);
+      height: dpr(240px);
+      margin-bottom: dpr(8px);
+    }
+
+    & p {
+      font-size: var(--text5);
+      color: var(--color1);
+    }
+  }
+}
